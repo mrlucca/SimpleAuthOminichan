@@ -1,6 +1,11 @@
 package internal
 
-import "github.com/gofiber/fiber/v2"
+import (
+	"fmt"
+	"log"
+
+	"github.com/gofiber/fiber/v2"
+)
 
 func StartServer() {
 	app := fiber.New()
@@ -19,6 +24,9 @@ func createUser(c *fiber.Ctx) error {
 			"message": "Invalid request body",
 		})
 	}
+	log.Println("new user")
+	log.Println(user)
+
 
 	if user.Email == "" || user.Pass == "" {
 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
