@@ -9,7 +9,7 @@ func StartServer() {
 	app.Post("/users/validate", checkUserIsValid)
 	app.Get("/users", listUsers)
 
-	app.Listen("0.0.0.0:3000")
+	app.Listen("0.0.0.0:80")
 }
 
 func createUser(c *fiber.Ctx) error {
