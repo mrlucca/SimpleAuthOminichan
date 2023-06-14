@@ -1,7 +1,6 @@
 package internal
 
 import (
-	"fmt"
 	"log"
 
 	"github.com/gofiber/fiber/v2"
@@ -26,7 +25,6 @@ func createUser(c *fiber.Ctx) error {
 	}
 	log.Println("new user")
 	log.Println(user)
-
 
 	if user.Email == "" || user.Pass == "" {
 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
